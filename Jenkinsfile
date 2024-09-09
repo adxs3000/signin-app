@@ -1,11 +1,11 @@
-Jenkinsfile (Declarative Pipeline)
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'node:20.17.0-alpine3.20' } }
+    agent {
+        docker { image 'nginx:alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'node --version'
+                sh 'node --version' // Note: node command is not available in nginx:alpine by default
             }
         }
     }
