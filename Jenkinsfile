@@ -7,7 +7,7 @@ pipeline {
             steps {
                 // Example: Copy static files to the Nginx directory
                 sh '''
-                cp -r /home/xs475-arcdal/Task-1-Xenonstack-/* /usr/share/nginx/html/
+                cp -r github.com/adxs3000/signin-app.git * /usr/share/nginx/html/
                 '''
             }
         }
