@@ -1,11 +1,11 @@
-pipeline {
+ppipeline {
     agent {
-        docker { image 'nginx:alpine' }
+        docker { image 'node:20.17.0-alpine3.20' }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'node --version' // Note: node command is not available in nginx:alpine by default
+                sh 'node --version'
             }
         }
     }
