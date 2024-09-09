@@ -1,11 +1,14 @@
-ppipeline {
+pipeline {
     agent {
-        docker { image 'node:20.17.0-alpine3.20' }
+        docker { image 'nginx:alpine' }
     }
     stages {
-        stage('Build') {
+        stage('Deploy') {
             steps {
-                sh 'node --version'
+                // Example: Copy static files to the Nginx directory
+                sh '''
+                cp -r /home/xs475-arcdal/Task-1-Xenonstack-* /usr/share/nginx/html/
+                '''
             }
         }
     }
